@@ -33,9 +33,7 @@ Propose schema for storing time series into mongodb
         ]
         }
     ```
-    - 
-
-        | Disadvantage                | Explanation |
+    -   | Disadvantage | Explanation |
         |-----------------------------|-------------|
         | Updates Are Expensive       | Modifying an individual data point within a bucket requires rewriting the whole document or complex update logic. If you frequently update/correct historical data, this is a pain. |
         | Document Size Limit         | MongoDB documents have a size limit (typically 16 MB). If a bucket (array) grows too large, you hit this limit, requiring carefully managed bucket sizes. |
@@ -50,9 +48,7 @@ Propose schema for storing time series into mongodb
 
 2. One Document Per Datapoint (Recommended)
 
-- 
-```
-{
+- ```{
   "_id": ObjectId("..."),
   "stock_symbol": "AAPL",
   "exchange": "NASDAQ",
@@ -62,7 +58,7 @@ Propose schema for storing time series into mongodb
   "low": 189.50,
   "close": 190.75,
   "volume": 1200
-}
-```
+    }
+    ```
 
 
