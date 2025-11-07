@@ -7,6 +7,7 @@ Propose schema for storing time series into mongodb
 
 A typical document in a time series collection groups data by stock and interval (e.g., 1 minute, 1 hour).
 
+```
 {
   "_id": ObjectId("..."),
   "stock_symbol": "AAPL",
@@ -32,6 +33,7 @@ A typical document in a time series collection groups data by stock and interval
     // ...more bars
   ]
 }
+```
 
 
 | Disadvantage                | Explanation |
@@ -49,6 +51,7 @@ A typical document in a time series collection groups data by stock and interval
 
 2. One Document Per Datapoint (Recommended)
 
+```
 {
   "_id": ObjectId("..."),
   "stock_symbol": "AAPL",
@@ -60,4 +63,6 @@ A typical document in a time series collection groups data by stock and interval
   "close": 190.75,
   "volume": 1200
 }
+```
+
 
